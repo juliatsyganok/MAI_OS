@@ -3,8 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
-
 #define MAX_LEN 4096
 
 static void reverse_string(char *s)
