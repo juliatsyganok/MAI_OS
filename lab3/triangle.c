@@ -20,8 +20,12 @@ typedef struct {
 } Task;
 
 double area(Pt a, Pt b, Pt c) {
-    double abx = b.x - a.x, aby = b.y - a.y, abz = b.z - a.z;
-    double acx = c.x - a.x, acy = c.y - a.y, acz = c.z - a.z;
+    double abx = b.x - a.x; 
+    double aby = b.y - a.y; 
+    double abz = b.z - a.z;
+    double acx = c.x - a.x;
+    double acy = c.y - a.y; 
+    double acz = c.z - a.z;
     double cx = aby * acz - abz * acy;
     double cy = abz * acx - abx * acz;
     double cz = abx * acy - aby * acx;
@@ -59,7 +63,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (thr < 1 || n < 3) {
-        printf("Error: need thr >= 1 and n >= 3\n");
+        printf("Ошибка кол-ва потоков\n");
         return 1;
     }
     if (thr > n - 2) thr = n - 2;
@@ -99,9 +103,9 @@ int main(int argc, char *argv[]) {
         }
     }
     printf("Thr: %d, N: %d\n", thr, n);
-    printf("Max area: %.6f\n", best);
-    printf("Points: %d %d %d\n", a, b, idx3);
-    printf("Time: %.6f sec\n", dt);
+    printf("Макс площадь: %.6f\n", best);
+    printf("Точки образ макс площадь: %d %d %d\n", a, b, idx3);
+    printf("Затрач время: %.6f sec\n", dt);
     free(pts);
     free(tids);
     free(tasks);
